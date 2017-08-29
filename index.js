@@ -62,7 +62,7 @@ function parseImport($import, dirname) {
   const src = $import.attr("src");
   const className = uppercamelcase(name || src);
 
-  // Parse the import and map the alias to the acutal element name.
+  // Parse the import and map the alias to the actual element name.
   if (name) {
     importMap[name] = getName(
       cheerio.load(fs.readFileSync(path.join(dirname, src)))("element").eq(0)
